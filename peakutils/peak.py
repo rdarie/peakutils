@@ -8,7 +8,7 @@ from scipy.integrate import simps
 
 eps = np.finfo(float).eps
 
-def indexes(y, thres=0.3, min_dist=1, thres_abs=False):
+def indexes(y, thres=0.3, min_dist=1, thres_abs=False, keep_max = True):
     """Peak detection routine.
 
     Finds the numeric index of the peaks in *y* by taking its first order difference. By using
@@ -85,7 +85,10 @@ def indexes(y, thres=0.3, min_dist=1, thres_abs=False):
 
     # handle multiple peaks, respecting the minimum distance
     if peaks.size > 1 and min_dist > 1:
-        highest = peaks[np.argsort(y[peaks])][::-1]
+        if keep_max:
+            highest = peaks[np.argsort(y[peaks])][::-1]
+        else:
+            highest = peaks
         rem = np.ones(y.size, dtype=bool)
         rem[peaks] = False
 
