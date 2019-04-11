@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 __pycache__
 build
 _build
@@ -5,3 +6,13 @@ MANIFEST
 dist
 *egg*
 *.pyc
+=======
+__pycache__
+build
+_build
+MANIFEST
+dist
+*egg*
+*.pyc
+*.vscode
+>>>>>>> 55b3ce70eca57af1527dc977d99139b55347838b
