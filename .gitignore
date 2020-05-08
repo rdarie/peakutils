@@ -5,4 +5,4 @@ MANIFEST
 dist
 *egg*
 *.pyc
-*.vscode
+.vscode/ftp-sync.json
