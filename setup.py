@@ -27,6 +27,8 @@ class my_clean(Command):
         pass
 
 
+with open('requirements.txt') as fp:
+    install_requires = fp.read().splitlines()
 with open('README.rst') as readme:
     long_description = readme.read()
 
@@ -38,7 +40,7 @@ setup(
     author_email='lucashnegri@gmail.com',
     url='https://bitbucket.org/lucashnegri/peakutils',
     packages=['peakutils'],
-    install_requires=['numpy', 'scipy'],
+    install_requires=install_requires,
     cmdclass={
         'clean': my_clean,
     },
